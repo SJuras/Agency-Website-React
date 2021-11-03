@@ -1,27 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Woman from '../img/woman2.png'
 import MiniCard from './MiniCard'
 import Play from '../img/play.png'
+import Video1 from '../video/video1.mp4'
+import AnimatedShapes from './AnimatedShapes'
 
 
 
 const Container = styled.div`
   display: flex;
+  height: 100%;
 `
 
 const Left = styled.div`
   width: 50%;
+  position: relative;
 `
 
 const Image = styled.img`
+  display: ${(props)=> props.open && "none"};
   width: 70%;
   margin-left: 100px;
+`
+
+const Video = styled.video`
+  display: ${(props)=> !props.open && "none"};
+  height: 300px;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
 `
 
 const Right = styled.div`
   width: 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Wrapper = styled.div`
@@ -68,10 +85,14 @@ const Icon = styled.img`
 `
 
 const Service = () => {
+
+  const [ open, setOpen ] = useState(false)
+
   return(
     <Container>
       <Left>
-        <Image src={Woman} />
+        <Image open={open} src={Woman} />
+        <Video open={open} autoPlay loop controls src={Video1} />
       </Left>
       <Right>
         <Wrapper>
@@ -87,9 +108,13 @@ const Service = () => {
             <MiniCard />
             <MiniCard />
           </CardContainer>
-          <Button><Icon src={Play} />How it works</Button>
+          <Button onClick={() => setOpen(true)}>
+            <Icon src={Play} />
+            How it works
+          </Button>
         </Wrapper>
       </Right>
+      <AnimatedShapes />
     </Container>
   )
 }
