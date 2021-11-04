@@ -6,7 +6,7 @@ import Send from '../img/send.png'
 
 
 const Container = styled.div`
-  height: 90%;
+  height: 85%;
   background-color: #fafafa;
 `
 
@@ -16,6 +16,10 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 480px){
+    flex-direction: column;
+  }
 `
 
 const FormContainer = styled.div`
@@ -24,12 +28,21 @@ const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+    margin-bottom: 16px;
+  }
 `
 
 const Title = styled.h1`
   margin: 50px;
   margin-top: 0px;
   text-align: center;
+
+  @media only screen and (max-width: 480px){
+    margin: 20px;
+  }
 `
 
 const Form = styled.form`
@@ -40,6 +53,12 @@ const Form = styled.form`
   -webkit-box-shadow: 0px 0px 17px -11px rgba(0,0,0,0.58);
   box-shadow: 0px 0px 17px -11px rgba(0,0,0,0.58);
   padding: 24px;
+
+  @media only screen and (max-width: 480px){
+    flex-direction: column;
+    padding: 0px;
+    box-shadow: none;
+  }
 `
 
 const LeftForm = styled.div`
@@ -48,6 +67,12 @@ const LeftForm = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 20px;
+
+  @media only screen and (max-width: 480px){
+    height: 50px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
 `
 
 const RightForm = styled.div`
@@ -55,11 +80,20 @@ const RightForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+  }
 `
 
 const Input = styled.input`
   width: 200px;
   padding: 20px;
+
+  @media only screen and (max-width: 480px){
+    padding: 5px;
+    margin-bottom: 6px;
+  }
 `
 
 const TextArea = styled.textarea`
@@ -67,6 +101,10 @@ const TextArea = styled.textarea`
   height: 60%;
   resize: none;
   padding: 20px;
+
+  @media only screen and (max-width: 480px){
+    padding: 5px;
+  }
 `
 
 const Button = styled.button`
@@ -89,12 +127,20 @@ const AddressContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+  }
 `
 
 const AddressItem = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+
+  @media only screen and (max-width: 480px){
+    margin-bottom: 20px;
+  }
 `
 
 const Icon = styled.img`
@@ -105,6 +151,10 @@ const Icon = styled.img`
 const Text = styled.span`
   font-size: 20px;
   margin-right: 15px;
+
+  @media only screen and (max-width: 480px){
+    font-size: 12px;
+  }
 `
 
 

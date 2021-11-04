@@ -11,11 +11,19 @@ import AnimatedShapes from './AnimatedShapes'
 const Container = styled.div`
   display: flex;
   height: 100%;
+
+  @media only screen and (max-width: 480px){
+    flex-direction: column;
+  }
 `
 
 const Left = styled.div`
   width: 50%;
   position: relative;
+
+  @media only screen and (max-width: 480px){
+    display: none;
+  }
 `
 
 const Image = styled.img`
@@ -32,6 +40,10 @@ const Video = styled.video`
   left: 0;
   right: 0;
   margin: auto;
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+  }
 `
 
 const Right = styled.div`
@@ -39,12 +51,21 @@ const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 480px){
+    width: 100%;
+  }
 `
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 480px){
+    padding: 20px;
+    width: 100%;
+  }
 `
 
 const Title = styled.h1`
@@ -84,9 +105,29 @@ const Icon = styled.img`
    margin-right: 10px;
 `
 
+const Modal = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  zop: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+`
+
+const CloseButton = styled.button`
+  position: absolute;
+  background-color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  right: 5px;
+  top: 30px;
+`
+
 const Service = () => {
 
-  const [ open, setOpen ] = useState(false)
+  const [ open, setOpen ] = useState(false);
+  const smallScreen = window.screen.width <= 480 ? true : false;
 
   return(
     <Container>
@@ -114,6 +155,12 @@ const Service = () => {
           </Button>
         </Wrapper>
       </Right>
+      {smallScreen && open && (
+        <Modal>
+          <Video open={open} autoPlay loop controls src={Video1} />
+          <CloseButton onClick={()=>setOpen(false)}>Close</CloseButton>
+        </Modal>
+      )}
       <AnimatedShapes />
     </Container>
   )

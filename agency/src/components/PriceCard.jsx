@@ -13,6 +13,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 480px){
+    margin-right: 0px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
 `
 
 const PriceContainer = styled.div`
@@ -23,6 +29,10 @@ const PriceContainer = styled.div`
 const Price = styled.span`
   font-weight: bold;
   font-size: 50px;
+
+  @media only screen and (max-width: 480px){
+    font-size: 30px;
+  }
 `
 
 const Type = styled.button`
@@ -32,6 +42,10 @@ const Type = styled.button`
   color: crimson;
   background-color: #fff;
   border-radius: 20px;
+
+  @media only screen and (max-width: 480px){
+    display: none;
+  }
 `
 
 const List = styled.ul`
@@ -40,6 +54,11 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin: 30px 0px;
+
+  @media only screen and (max-width: 480px){
+    margin: 10px 0px;
+    font-size: 12px;
+  }
 `
 
 const Button = styled.button`
@@ -54,6 +73,11 @@ const Button = styled.button`
   transition: 0.5s;
   &:hover {
     background-color: lightblue;
+  }
+
+  @media only screen and (max-width: 480px){
+    font-size: 12px;
+    padding: 5px;
   }
 `
 

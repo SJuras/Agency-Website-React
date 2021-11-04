@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    height: 10%;
+    height: 15%;
     background-color: crimson;
     color: lightgrey;
 `
@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 480px){
+    flex-direction: column;
+  }
 `
 
 const List = styled.ul`
@@ -19,6 +23,10 @@ const List = styled.ul`
   margin: 0;
   list-style: none;
   display: flex;
+
+  @media only screen and (max-width: 480px){
+    margin-bottom: 12px;
+  }
 `
 
 const ListItem = styled.li`
