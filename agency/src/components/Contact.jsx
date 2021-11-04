@@ -37,6 +37,9 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-box-shadow: 0px 0px 17px -11px rgba(0,0,0,0.58);
+  box-shadow: 0px 0px 17px -11px rgba(0,0,0,0.58);
+  padding: 24px;
 `
 
 const LeftForm = styled.div`
